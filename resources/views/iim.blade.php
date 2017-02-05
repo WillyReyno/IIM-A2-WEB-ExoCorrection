@@ -1,1 +1,0 @@
-<strong>Institut de l'Internet et du Multimédia</strong>

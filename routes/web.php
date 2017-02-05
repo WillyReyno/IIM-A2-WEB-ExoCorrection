@@ -14,19 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Auth::routes();
 
-Route::get('/iim', function() {
-    return view('iim');
-});
-
-Route::get('/iim/{param}', function($param) {
-   return view('param', compact('param'));
-});
-
-Route::get('/page1', function() {
-    return view('page1');
-});
-
-Route::get('/page2', function() {
-    return view('page2');
-});
+Route::get('/home', 'HomeController@index');

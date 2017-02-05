@@ -16,9 +16,9 @@ Route::get('/', function () {
 });
 
 Route::get('/iim', function() {
-    return 'Institut de l\'Internet et du Multimédia';
+    return view('iim');
 });
 
-Route::get('/{param}', function($param) {
-   return $param;
+Route::get('/iim/{param}', function($param) {
+   return view('param', compact('param'));
 });

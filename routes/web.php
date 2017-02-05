@@ -19,3 +19,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index');
 
 Route::resource('/article', 'ArticleController');
+
+Route::get('/user', function() {
+    return view('user');
+});

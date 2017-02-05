@@ -38,6 +38,19 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request,
+            [
+                'title' => 'required|min:5',
+                'content' => 'required|min:10'
+            ],
+            [
+                'title.required' => 'Titre requis',
+                'title.min' => 'Minimum 5 caractères',
+
+                'content.required' => 'Contenu requis',
+                'content.min' => 'Minimum 10 caractères'
+            ]);
+
         $article = new Article();
         $input = $request->input();
         $input['user_id'] = Auth::user()->id;

@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/iim', function() {
+    return 'Institut de l\'Internet et du Multimédia';
+});
+
+Route::get('/{param}', function($param) {
+   return $param;
+});

@@ -95,7 +95,27 @@ class ArticleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request,
+            [
+                'title' => 'required|min:5',
+                'content' => 'required|min:10'
+            ],
+            [
+                'title.required' => 'Titre requis',
+                'title.min' => 'Minimum 5 caractères',
+
+                'content.required' => 'Contenu requis',
+                'content.min' => 'Minimum 10 caractères'
+            ]);
+
+        $article = Article::find($id);
+        $input = $request->input();
+
+        $article
+            ->fill($input)
+            ->save();
+
+        return redirect()->route('article.index');
     }
 
     /**
@@ -106,6 +126,9 @@ class ArticleController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $article = Article::find($id);
+        $article->delete();
+
+        return redirect()->route('article.index');
     }
 }

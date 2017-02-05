@@ -13,6 +13,8 @@
                                 <li><a href="{{ route('article.show', $article->id) }}">{{ $article->title }}</a></li>
                             @endforeach
                         </ul>
+
+                        {{ $articles->links() }}
                     </div>
                 </div>
             </div>

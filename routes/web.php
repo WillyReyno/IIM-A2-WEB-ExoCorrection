@@ -23,3 +23,7 @@ Route::resource('/article', 'ArticleController');
 Route::get('/user', function() {
     return view('user');
 });
+
+Route::get('/admin', function() {
+    return view('admin');
+});

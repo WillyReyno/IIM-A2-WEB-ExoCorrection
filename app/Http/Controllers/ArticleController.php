@@ -59,7 +59,7 @@ class ArticleController extends Controller
             ->fill($input)
             ->save();
 
-        return redirect()->route('article.index');
+        return redirect()->route('article.index')->with('success', 'L\'article a bien été publié');;
     }
 
     /**
@@ -115,7 +115,7 @@ class ArticleController extends Controller
             ->fill($input)
             ->save();
 
-        return redirect()->route('article.index');
+        return redirect()->route('article.index')->with('success', 'L\'article a bien été modifié');;
     }
 
     /**
@@ -129,6 +129,6 @@ class ArticleController extends Controller
         $article = Article::find($id);
         $article->delete();
 
-        return redirect()->route('article.index');
+        return redirect()->route('article.index')->with('success', 'L\'article a bien été supprimé');
     }
 }

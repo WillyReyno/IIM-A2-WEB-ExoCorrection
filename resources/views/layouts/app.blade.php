@@ -55,7 +55,8 @@
                         <li><a href="{{ route('register') }}">Register</a></li>
                     @else
                         <li><a href="{{ url('/home') }}">Home</a></li>
-                        <li><a href="{{ url('/article') }}">Liste des articles</a></li>
+                        <li><a href="{{ url('/article') }}">Blog</a></li>
+                        <li><a href="{{ url('/article/create') }}">Publier</a></li>
                         <li><a href="{{ url('/user') }}">Profil</a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
